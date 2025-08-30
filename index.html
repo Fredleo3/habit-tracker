@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestor de Hábitos</title>
-</head>
-<body>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <main>
-        <header>
-            <h1 >Gestor de Hábitos</h1>
-        </header>
-        <section>
+      <header>
+        <h1 class="title">Gestor de Hábitos</h1>
+      </header>
+      <section class="habit-form__section">
         <form class="habit-form" action="submit">
-            <label class="habit-form__label" for="habit-form-input">Ingresa el hábito</label>
-            <input class="habit-form__input" id="habit-form-input" type="text">
-            <button id="habit-form__submit" type="submit">Agregar</button>
+          <label class="habit-form__label" for="habit-form-input"
+            >Ingresa el hábito</label
+          >
+          <input
+            class="habit-form__input"
+            id="habit-form-input"
+            type="text"
+            placeholder="Mi hábito"
+          />
+          <button
+            class="habit-form__submit"
+            id="habit-form-submit"
+            type="submit"
+          >
+            Agregar
+          </button>
         </form>
-        </section>
+      </section>
 
-        <section>
-            <ul id="habit-list"></ul>
-        </section>
+      <section class="habit-list__section">
+        <h4 class="habit-list__title">Lista de hábitos</h4>
+        <ul class="habit-list__container" id="habit-list-container">
+          <li class="habit-list__item"><button>uno</button></li>
+          <li class="habit-list__item"><button>uno</button></li>
+          <li class="habit-list__item"><button>uno</button></li>      
+        </ul>
+      </section>
     </main>
-    
-</body>
+  </body>
 </html>

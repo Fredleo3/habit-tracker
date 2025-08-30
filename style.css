@@ -1,0 +1,122 @@
+:root {
+    /* Lineas */
+    --lines-color: #ccc; 
+    /* Botones */
+    --btn-background-color: #12a1ee; 
+    --btn-line-color: #108ccf;
+    /* Textos*/
+    --btn-background-selected-color:  #026cd0;
+    --btn-line-selected-color: #0160b9;
+    --label-color: #3e3e3e;
+    --title-color: black;
+    --general-text-color: black;
+    /* Focus */
+    --color-focus-outline: #fc714e ;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family:"Noto Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+main {
+    padding: 0 20px;
+}
+
+.title {
+    font-weight: 900;
+    text-align: center;
+    margin: 50px auto;
+    line-height: 1.85rem;
+    color: var(--title-color);
+}
+
+.habit-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.habit-form__label {
+    margin: 0 0 8px 0;
+    font-size: 0.9rem;
+    color: var(--label-color);
+    cursor: pointer;
+}
+
+.habit-form__input {
+    padding: 6px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--lines-color);
+}
+
+.habit-form__submit {
+    margin: 4px 0;
+    padding: 4px;
+    border-radius: 4px;
+    border: 2px solid var(--btn-line-color);
+    background-color: var(--btn-background-color);
+    color: white;
+    font-weight: 500;
+    
+}
+
+.habit-form__submit:hover {
+    cursor: pointer;  
+    border: 2px solid var(--btn-line-selected-color);
+    background-color: var(--btn-background-selected-color);
+}
+
+.habit-form__input:focus,
+.habit-form__submit:focus,
+.habit-list__item button:focus {
+    outline: 2px solid var(--color-focus-outline);
+    border-radius: 2px;
+}
+
+.habit-list__section, 
+.habit-form__section {
+    max-width: 550px;
+    margin: 10px auto;
+    max-height: fit-content;
+}
+
+.habit-list__title {
+    text-align: center;
+    margin: 20px auto 10px auto;
+    color: var(--title-color);
+}
+
+.habit-list__container {  
+    padding: 6px;
+    border: 1px solid var(--lines-color);
+    border-radius: 4px;
+    max-height: fit-content;
+    
+}
+
+.habit-list__item {
+    list-style: none;
+    margin: 0 0 3px 2px;
+    color: var(--general-text-color);
+    border-bottom: 1px solid var(--lines-color);
+    
+}
+
+.habit-list__item button{       
+    color: var(--general-text-color);
+    background-color: transparent;
+    border: none;
+    padding: 0 4px;
+    font-size: 1rem;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+
+.habit-list__item:last-child {
+    border: none;
+}
