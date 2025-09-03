@@ -1,6 +1,6 @@
 :root {
     /* Lineas */
-    --lines-color: #ccc; 
+    --lines-color: #d3d2d2; 
     /* Botones */
     --btn-background-color: #12a1ee; 
     --btn-line-color: #108ccf;
@@ -10,8 +10,15 @@
     --label-color: #3e3e3e;
     --title-color: black;
     --general-text-color: black;
+    --general-text-negative-color: white;
     /* Focus */
-    --color-focus-outline: #fc714e ;
+    --color-focus-outline: #fc714e;
+
+    
+    /* Iconos */
+    --habit-done-color: rgb(77, 211, 0);
+    --inactive-color-icon: rgb(195, 197, 195);
+    --danger-color-icon: rgb(234, 3, 3);
 
 }
 
@@ -50,6 +57,8 @@ main {
     padding: 6px 6px;
     border-radius: 4px;
     border: 1px solid var(--lines-color);
+    resize: vertical;
+    
 }
 
 .habit-form__submit {
@@ -58,7 +67,7 @@ main {
     border-radius: 4px;
     border: 2px solid var(--btn-line-color);
     background-color: var(--btn-background-color);
-    color: white;
+    color: var(--general-text-negative-color);
     font-weight: 500;
     
 }
@@ -89,34 +98,138 @@ main {
     color: var(--title-color);
 }
 
-.habit-list__container {  
-    padding: 6px;
-    border: 1px solid var(--lines-color);
-    border-radius: 4px;
-    max-height: fit-content;
-    
+.habit-list__container {
+    background-color: rgb(238, 238, 238);
+    padding: 4px;
+    border-radius: 10px;
+    min-height: 30px;
 }
 
 .habit-list__item {
-    list-style: none;
-    margin: 0 0 3px 2px;
-    color: var(--general-text-color);
-    border-bottom: 1px solid var(--lines-color);
-    
+    list-style: none;    
+    /*border-bottom: 1px solid var(--lines-color);*/
+    display: flex;
+    align-items: stretch;
+    padding: 0 0 10px 0; 
+    position: relative;   
+    background-color: white;
+    margin-bottom: 6px;
+    border-radius: 6px;
 }
 
-.habit-list__item button{       
-    color: var(--general-text-color);
+.habit-list__item:last-child {
+    margin-bottom: 0;
+}
+
+/*
+.habit-list__item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 2%; // inicio desde el borde izquierdo 
+  right: 2%; // inicio desde el borde derecho 
+  height: 1px; // Grosor del borde 
+  background-color: var(--lines-color); // Color del borde 
+}
+
+.habit-list__item:last-child::after {
+    display: none;
+}
+*/
+
+.habit-list__item-check,
+.habit-list__item-checked,
+.habit-list__item-text,
+.habit-list__item-delete {
+    margin-top: 12px;
     background-color: transparent;
     border: none;
-    padding: 0 4px;
-    font-size: 1rem;
-    width: 100%;
-    text-align: left;
     cursor: pointer;
 }
 
+.habit-list__item-text {
+    flex: 3 1 220px;
+    text-align: left;
+    padding: 6px 16px;    
+}
 
-.habit-list__item:last-child {
+.habit-list__item-delete {
+    flex: 1 3 15px;
+    color: var(--inactive-color-icon);
+    border-left: 1px solid var(--lines-color);
+    padding: 0 10px; 
+}
+
+.habit-list__item-delete:hover {
+    border-radius: 3px;
+    background-color: #e7e7e7;
+    color: var(--danger-color-icon);
     border: none;
 }
+
+.habit-list__item-check i,
+.habit-list__item-checked i,
+.habit-list__item-delete i{
+    font-size: 1.2rem;
+}
+
+.habit-list__item-check {    
+    flex: 1 3 15px;
+    border-right: 1px solid var(--lines-color);
+    padding: 0 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 0;
+    opacity: 0;
+    font-size: 0rem;    
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    transition: max-width .4s ease, opacity .4s ease;   
+}
+
+.habit-list__item-check i{
+    color: var(--inactive-color-icon);
+}
+
+.habit-list__item-checked i.done {
+    color: var(--habit-done-color);
+}
+
+/* mostrar el chack cuando se hace hover sobre el texto*
+Requiere el soporte del :has por parte del navegador
+*/
+.habit-list__item:has(.habit-list__item-text:hover,
+.habit-list__item-check:hover)
+.habit-list__item-check{
+    max-width: 100%;
+    opacity: 1;
+    border-right: 1px solid var(--lines-color);
+    padding: 0 12px;  
+    font-size: 1.45rem;  
+}
+
+.habit-list__item-check i:hover,
+.habit-list__item-checked i:hover {
+    font-size: 1.45rem;
+    color: var(--habit-done-color);
+}
+
+.habit-list__item-checked {
+    flex: 1 3 15px;
+    border-right: 1px solid var(--lines-color);
+    padding: 0 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+

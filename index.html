@@ -13,6 +13,11 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- Iconos-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=delete,radio_button_checked,radio_button_unchecked&display=block"
+    />
   </head>
   <body>
     <main>
@@ -20,16 +25,17 @@
         <h1 class="title">Gestor de Hábitos</h1>
       </header>
       <section class="habit-form__section">
-        <form class="habit-form" action="submit">
+        <form class="habit-form" id="habit-form" action="submit">
           <label class="habit-form__label" for="habit-form-input"
             >Ingresa el hábito</label
           >
-          <input
+          <textarea
             class="habit-form__input"
             id="habit-form-input"
             type="text"
             placeholder="Mi hábito"
-          />
+            required
+          ></textarea>
           <button
             class="habit-form__submit"
             id="habit-form-submit"
@@ -43,11 +49,81 @@
       <section class="habit-list__section">
         <h4 class="habit-list__title">Lista de hábitos</h4>
         <ul class="habit-list__container" id="habit-list-container">
-          <li class="habit-list__item"><button>uno</button></li>
-          <li class="habit-list__item"><button>uno</button></li>
-          <li class="habit-list__item"><button>uno</button></li>      
+          
+          <li class="habit-list__item">
+            <button class="habit-list__item-check">
+              <i class="material-symbols-outlined">radio_button_unchecked</i>
+            </button>
+
+            <button class="habit-list__item-text">
+              Uno - Texto largo para hacer que se vean dos líneas y revisar la
+              alineación del icono "check"
+            </button>
+
+            <button class="habit-list__item-delete">
+              <i class="material-symbols-outlined">delete</i>
+            </button>
+          </li>
+
+          <li class="habit-list__item">
+            <button class="habit-list__item-check">
+              <i class="material-symbols-outlined not-done"
+                >radio_button_unchecked</i
+              >
+            </button>
+
+            <button class="habit-list__item-text">Dos</button>
+
+            <button class="habit-list__item-delete">
+              <i class="material-symbols-outlined">delete</i>
+            </button>
+          </li>
+
+          <li class="habit-list__item">
+            <button class="habit-list__item-check">
+              <i class="material-symbols-outlined not-done"
+                >radio_button_unchecked</i
+              >
+            </button>
+
+            <button class="habit-list__item-text">Tres</button>
+
+            <button class="habit-list__item-delete">
+              <i class="material-symbols-outlined">delete</i>
+            </button>
+          </li>
+
+          <!--
+          <li class="habit-list__item">
+            <button class="habit-list__item-btn">
+              <div class="habit-list__item-btn-icon">
+                <i class="material-symbols-outlined not-done">circle</i>
+              </div>
+              <div class="habit-list__item-btn-text">
+                Uno - Texto largo para hacer que se vean dos líneas y revisar la
+                alineación del icono "check"
+              </div>
+            </button>
+            <button class="habit-list__delete">
+              <i class="material-symbols-outlined">delete</i>
+            </button>
+          </li>
+
+          <li class="habit-list__item">
+            <button class="habit-list__item-btn">
+              <div class="habit-list__item-btn-icon">
+                <i class="material-symbols-outlined not-done">circle</i>
+              </div>
+              <div class="habit-list__item-btn-text">Hábito</div></button
+            ><button class="habit-list__delete">
+              <i class="material-symbols-outlined">delete</i>
+            </button>
+          </li>
+
+-->
         </ul>
       </section>
     </main>
+    <script src="app.js"></script>
   </body>
 </html>
